@@ -45,10 +45,6 @@ module Lita
           default[config_option.name] = config_option.default
         end
       end
-
-      def disabled?
-        Lita.config.disabled and Lita.config.disabled.include?(namespace.to_sym)
-      end
     end
   end
 end
