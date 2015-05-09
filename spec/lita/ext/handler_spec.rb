@@ -34,7 +34,7 @@ describe Lita::Handler, lita: true do
   describe '.config' do
     before do
       allow(Lita).to receive(:handlers).and_return([subject])
-      Lita::Config.load_user_config
+      Lita::ConfigurationBuilder.load_user_config
     end
 
     it "defaults to required" do
