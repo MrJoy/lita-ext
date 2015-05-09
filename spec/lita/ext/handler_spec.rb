@@ -62,8 +62,13 @@ describe Lita::Handler, lita: true do
   end
 
   describe '#config' do
+    before do
+      allow(robot).to receive(:config)#.and_return(???)
+    end
+
     it "returns the handler's config object" do
-      expect(subject.config).to eq(Lita.config.handlers.foo_handler)
+      fail "Need to figure out how we want to test configuration loading here."
+      # expect(subject.config).to eq(Lita.config.handlers.foo_handler)
     end
 
     # TODO: figure out how to initialize the handler's config object properly
