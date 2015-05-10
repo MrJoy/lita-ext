@@ -17,6 +17,7 @@ module Lita
     class ConfigOption < Struct.new(
       :name,
       :required,
+      :types,
       :default
     )
       alias_method :required?, :required
@@ -32,8 +33,8 @@ module Lita
         @handlers ||= []
       end
 
-      def config(name, required: true, default: nil)
-        config_options << ConfigOption.new(name, required, default)
+      def config(name, required: true, types: nil, default: nil)
+        config_options << ConfigOption.new(name, required, types, default)
       end
 
       def config_options
