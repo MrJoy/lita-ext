@@ -33,8 +33,9 @@ module Lita
         @handlers ||= []
       end
 
-      def config(name, required: true, type: nil, default: nil)
-        config_options << ConfigOption.new(name, required, type, default)
+      def config(name, required: true, type: nil, types: nil, default: nil)
+        eff_types = Array(type) + Array(types)
+        config_options << ConfigOption.new(name, required, eff_types, default)
       end
 
       def config_options
